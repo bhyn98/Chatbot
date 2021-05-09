@@ -1,0 +1,8 @@
+@charset "UTF-8";
+h1 {text-align: center;}
+.ttitle {background: #BDD7EE; width: 200px;}
+table {margin-left: auto; margin-right: auto;}
+td {width: 300px; text-align: center;}
+.form-group {width: 300px; height: 30px;}
+input {width: 300px; height:30px;}
+.btn-primary {background: #BDD7EE; border-radius: 12px; width: 100px;}

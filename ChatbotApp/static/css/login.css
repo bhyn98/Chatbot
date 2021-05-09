@@ -1,0 +1,79 @@
+@charset "UTF-8";
+.header{
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+	color: black;
+	text-align: center;
+    font-size: 30px;
+    top: 100px;
+}
+
+.nav{
+    top: 150px;
+    width: 250px;
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    background: #BDD7EE;
+    color: #fff;
+    padding: 13px;
+    border-radius: 20rem;
+    font-size: 11pt;
+    box-shadow: 2px 2px 3px #d1d1d1;
+}
+
+.img{
+    top: 121px;
+    position: absolute;
+    left: 50%; transform: translateX(-230%);
+    width: 100px;
+    height: 100px;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+}
+
+.ID{
+    top: 210px;
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    background: #8FAADC;
+    color: #fff;
+    padding: 13px;
+    border-radius: 20rem;
+    font-size: 11pt;
+    box-shadow: 2px 2px 3px #d1d1d1;
+}
+
+.PW{
+    top: 265px;
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    background: #8FAADC;
+    color: #fff;
+    padding: 13px;
+    border-radius: 20rem;
+    font-size: 11pt;
+    box-shadow: 2px 2px 3px #d1d1d1;
+}
+
+input::placeholder{
+    color: #fff;
+}
+
+.loginbtn{
+    top: 330px;
+    position: absolute;
+    left: 50%; transform: translateX(-120%);
+    background: #BDD7EE;
+    border-radius: 10px;
+}
+
+.registerbtn{
+    top: 330px;
+    position: absolute;
+    left: 50%; transform: translateX(-0%);
+    background: #BDD7EE;
+    border-radius: 10px;
+}

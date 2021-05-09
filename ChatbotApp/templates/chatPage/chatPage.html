@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <link href="{% static 'css/chatPage.css' %}" rel="stylesheet" type="text/css" />
+    <title>KNU CHATBOT</title>
+    <script src="chatPage.js"></script>
+</head>
+
+<body>
+    <div class="chatPage">
+        <div class="chat_head">
+            <!-- 로고 + 제목 -->
+            <span>
+                <img class="logo_img" src="/static/img/nyangnyang.jpg">
+            </span>
+            <span>
+                <text class="knu_title">강남대학교 챗봇</text>
+            </span>
+            <span class="addInfor">
+                <input type="button" class="addInforBtn" value="추가정보기입하기" onclick="location.href='../grades'">
+            </span>
+            <span class="logout">
+                <input type="button" class="logoutBtn" value="로그아웃" onclick="location.href='../'">
+            </span>
+
+        </div>
+
+        <div class="chat_body">
+            채팅내용 나오도록,,
+            <div class="you_msg">
+                <span>
+                    <img class="psa" src="/static/img/nyangnyang.jpg">
+                </span>
+                send
+            </div>
+            <div class="my_msg">
+                receive
+            </div>
+        </div>
+        <div class="chat_foot">
+            <input type="text" class="chat_text">
+            <a href="#" class="btn_send_msg" onclick="javascript:doQuestion();"></a>
+        </div>
+    </div>
+</body>
+
+</html>

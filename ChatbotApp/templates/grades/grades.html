@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'css/grades.css' %}">
+<meta charset="UTF-8">
+<title>강남대학교 챗봇</title>
+</head>
+<body>
+	<strong><pre>  추가정보(선택)</pre></strong>
+	<strong><pre>  학점 기입</pre></strong>
+	<button id="save" onclick="location.href='../register'">저장하기</button>
+	<div class="grademain" style="text-align: left">
+
+		<input id="tab1" type="radio" name="tabs" checked> <label
+			for="tab1">1학년 1학기</label> <input id="tab2" type="radio" name="tabs">
+		<label for="tab2">1학년 2학기</label> <input id="tab3" type="radio"
+			name="tabs"> <label for="tab3">2학년 1학기</label> <input
+			id="tab4" type="radio" name="tabs"> <label for="tab4">2학년
+			2학기</label> <input id="tab5" type="radio" name="tabs"> <label
+			for="tab5">3학년 1학기</label> <input id="tab6" type="radio" name="tabs">
+		<label for="tab6">3학년 2학기</label> <input id="tab7" type="radio"
+			name="tabs"> <label for="tab7">4학년 1학기</label> <input
+			id="tab8" type="radio" name="tabs"> <label for="tab8">4학년
+			2학기</label>
+
+
+		<section id="content1" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(1)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(1)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result1></span></div></strong>
+			<strong><div>취득<span id=get_result1></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody1">
+					<tr>
+						<td><input type="text" id="name_table1[0]"
+							name="name_table1[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table1[0]"
+							name="grade_table1[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table1[0]" name="grades_table1[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table1[0]"
+							name="major_table1[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(1)">완료</button>
+		</section>
+
+		<section id="content2" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(2)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(2)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result2></span></div></strong>
+			<strong><div>취득<span id=get_result2></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody2">
+					<tr>
+						<td><input type="text" id="name_table2[0]"
+							name="name_table2[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table2[0]"
+							name="grade_table2[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table2[0]" name="grades_table2[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table2[0]"
+							name="major_table2[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(2)">완료</button>
+		</section>
+
+		<section id="content3" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(3)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(3)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result3></span></div></strong>
+			<strong><div>취득<span id=get_result3></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody3">
+					<tr>
+						<td><input type="text" id="name_table3[0]"
+							name="name_table3[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table3[0]"
+							name="grade_table3[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table3[0]" name="grades_table3[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						<td><input type="checkbox" id="major_table3[0]"
+							name="major_table3[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(3)">완료</button>
+		</section>
+
+		<section id="content4" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(4)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(4)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result4></span></div></strong>
+			<strong><div>취득<span id=get_result4></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody4">
+					<tr>
+						<td><input type="text" id="name_table4[0]"
+							name="name_table4[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table4[0]"
+							name="grade_table4[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table4[0]" name="grades_table4[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table4[0]"
+							name="major_table4[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(4)">완료</button>
+		</section>
+
+		<section id="content5" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(5)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(5)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result5></span></div></strong>
+			<strong><div>취득<span id=get_result5></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody5">
+					<tr>
+						<td><input type="text" id="name_table5[0]"
+							name="name_table5[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table5[0]"
+							name="grade_table5[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table5[0]" name="grades_table5[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table5[0]"
+							name="major_table5[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(5)">완료</button>
+		</section>
+
+		<section id="content6" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(6)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(6)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result6></span></div></strong>
+			<strong><div>취득<span id=get_result6></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody6">
+					<tr>
+						<td><input type="text" id="name_table6[0]"
+							name="name_table6[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table6[0]"
+							name="grade_table6[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table6[0]" name="grades_table6[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table6[0]"
+							name="major_table6[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(6)">완료</button>
+		</section>
+
+		<section id="content7" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(7)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(7)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result7></span></div></strong>
+			<strong><div>취득<span id=get_result7></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody7">
+					<tr>
+						<td><input type="text" id="name_table7[0]"
+							name="name_table7[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table7[0]"
+							name="grade_table7[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table7[0]" name="grades_table7[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table7[0]"
+							name="major_table7[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(7)">완료</button>
+		</section>
+
+		<section id="content8" style="margin-bottom: 20px;">
+			<button id="addbtn" onclick="add_row(8)">과목 추가</button>
+			<button id="deletebtn" onclick="delete_row(8)">과목 삭제</button>
+			<hr>
+			<strong><div>평점<span id=avg_result8></span></div></strong>
+			<strong><div>취득<span id=get_result8></span></div></strong>
+			<table>
+				<thead>
+					<tr>
+						<th id="th_1">과목명</th>
+						<th>학점</th>
+						<th>성적</th>
+						<th>전공</th>
+					</tr>
+				</thead>
+				<tbody id="my-tbody8">
+					<tr>
+						<td><input type="text" id="name_table8[0]"
+							name="name_table8[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"
+							placeholder="ex) 컴퓨터프로그래밍"></td>
+						<td><input type="text" id="grade_table8[0]"
+							name="grade_table8[0]" size="20"
+							style="width: 90%; border: 0; outline: none;" placeholder="ex) 3"></td>
+						<td><select id="grades_table8[0]" name="grades_table8[0]">
+								<option value=4.5>A+</option>
+								<option value=4.0>A</option>
+								<option value=3.5>B+</option>
+								<option value=3.0>B</option>
+								<option value=2.5>C+</option>
+								<option value=2>C</option>
+								<option value=1.5>D+</option>
+								<option value=1>D</option>
+								<option value=0>F</option>
+						</select></td>
+						<td><input type="checkbox" id="major_table8[0]"
+							name="major_table8[0]" size="20"
+							style="width: 90%; border: 0; outline: none;"></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<button id="commit" onclick="commit(8)">완료</button>
+		</section>
+	</div>
+
+	<script>
+		var i=1;
+		function add_row(x) {
+			var objRow = document.getElementById('my-tbody' + x);
+			var row = objRow.insertRow(objRow.rows.length);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			if(x==1){
+				cell1.innerHTML = '<input type="text" id="name_table1['+i+']" name="name_table1['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table1['+i+']" name="grade_table1['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table1['+i+']" name="grades_table1['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table1['+i+']" name="major_table1['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==2){
+				cell1.innerHTML = '<input type="text" id="name_table2['+i+']" name="name_table2['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table2['+i+']" name="grade_table2['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table2['+i+']" name="grades_table2['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table2['+i+']" name="major_table2['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==3){
+				cell1.innerHTML = '<input type="text" id="name_table3['+i+']" name="name_table3['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table3['+i+']" name="grade_table3['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table3['+i+']" name="grades_table3['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table3['+i+']" name="major_table3['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==4){
+				cell1.innerHTML = '<input type="text" id="name_table4['+i+']" name="name_table4['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table4['+i+']" name="grade_table4['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table4['+i+']" name="grades_table4['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table4['+i+']" name="major_table4['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==5){
+				cell1.innerHTML = '<input type="text" id="name_table5['+i+']" name="name_table5['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table5['+i+']" name="grade_table5['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table5['+i+']" name="grades_table5['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table5['+i+']" name="major_table5['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==6){
+				cell1.innerHTML = '<input type="text" id="name_table6['+i+']" name="name_table6['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table6['+i+']" name="grade_table6['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table6['+i+']" name="grades_table6['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table6['+i+']" name="major_table6['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==7){
+				cell1.innerHTML = '<input type="text" id="name_table7['+i+']" name="name_table7['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table7['+i+']" name="grade_table7['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table7['+i+']" name="grades_table7['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table7['+i+']" name="major_table7['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			if(x==8){
+				cell1.innerHTML = '<input type="text" id="name_table8['+i+']" name="name_table8['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 컴퓨터프로그래밍">';
+			cell2.innerHTML = '<input type="text" id="grade_table8['+i+']" name="grade_table8['+i+']" size="20" style="width:90%; border: 0; outline: none;" placeholder="ex) 3">';
+			cell3.innerHTML = '<select id="grades_table8['+i+']" name="grades_table8['+i+']"><option value=1>A+</option><option value=2>A</option><option value=3>B+</option><option value=4>B</option><option value=5>C+</option><option value=6>C</option><option value=7>D+</option><option value=8>D</option><option value=9>F</option></select>';
+			cell4.innerHTML = '<input type="checkbox" id="major_table8['+i+']" name="major_table8['+i+']" size="20" style="width:90%; border: 0; outline: none;">';
+			i++;
+			}
+			
+		}
+
+		function delete_row(y) {
+			var my_tbody = document.getElementById('my-tbody' + y);
+			if (my_tbody.rows.length < 2)
+				return;
+			// my_tbody.deleteRow(0); // 상단부터 삭제
+			my_tbody.deleteRow(my_tbody.rows.length - 1); // 하단부터 삭제
+		}
+
+		function commit(z){
+			var my_tbody = document.getElementById('my-tbody'+z);
+			var mg="grade_table"+z;
+			var mgs="grades_table"+z;
+			var my_gradeszero="grades_table"+z+"[0]";
+			var my_grade;
+			var my_grades;
+			var a="avg_result"+z;
+			var g="get_result"+z;
+			var avg_result=0.0;
+			var avg;
+			var avgsum=0;
+			var selectOption;
+			var temp;
+			var sel;
+			var real_avg=0.0;
+			for(i=0;i<my_tbody.rows.length;i++){
+				my_grade=mg+'['+i+']';
+				my_grades=mgs+'['+i+']';
+				avg=document.getElementById(my_grade).value;
+				selectOption=document.getElementById(my_gradeszero);
+				sel=selectOption.options[document.getElementById(my_grades).selectedIndex].value;
+				avg_result=parseFloat(sel);
+				avgsum+=parseFloat(avg);
+				real_avg+=(avg*sel);
+			}
+			temp=real_avg/avgsum;
+			document.getElementById(a).innerText=temp;
+
+			var get_result=0;
+			var get;
+			for(i=0;i<my_tbody.rows.length;i++){
+				my_grade=mg+'['+i+']';
+				get=document.getElementById(my_grade).value;
+				get_result+=parseInt(get);
+			}
+			document.getElementById(g).innerText=get_result;
+
+		}
+	</script>
+</body>
+</html>

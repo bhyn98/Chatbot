@@ -1,0 +1,143 @@
+@charset "UTF-8";
+pre { /*추가정보 학점기입*/
+	font-size: 15px;
+}
+
+table { /*학점기입표*/
+	border-collapse: collapse;
+}
+
+#th_1 {
+	width: 200px;
+}
+
+th, td { /*학점기입표*/
+	border: 1px solid gray;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+}
+#save:focus { /*과목삭제*/
+	outline: 0;
+}
+#save:hover { /*과목삭제*/
+	background: rgba(0, 79, 255, 0.9);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 79, 255, 0.6);
+}
+#commit:focus { /*과목삭제*/
+	outline: 0;
+}
+
+#commit:hover { /*과목삭제*/
+	background: rgba(0, 79, 255, 0.9);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 79, 255, 0.6);
+}
+
+#deletebtn:focus { /*과목삭제*/
+	outline: 0;
+}
+
+#deletebtn:hover { /*과목삭제*/
+	background: rgba(0, 79, 255, 0.9);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 79, 255, 0.6);
+}
+
+#addbtn:focus { /*과목추가*/
+	outline: 0;
+}
+
+#addbtn:hover { /*과목추가*/
+	background: rgba(0, 79, 255, 0.9);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 79, 255, 0.6);
+}
+#save { /*과목추가*/
+	width: 70px;
+	height: 25px;
+	color: #fff;
+	background: #8FAADC;
+	font-size: 13px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+}
+#commit { /*과목추가*/
+	width: 70px;
+	height: 25px;
+	color: #fff;
+	background: #8FAADC;
+	font-size: 13px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+}
+
+#addbtn { /*과목추가*/
+	width: 70px;
+	height: 25px;
+	color: #fff;
+	background: #8FAADC;
+	font-size: 13px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+}
+
+#deletebtn { /*과목삭제*/
+	width: 70px;
+	height: 25px;
+	color: #fff;
+	background: #8FAADC;
+	font-size: 13px;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+}
+
+.grademain { /*학점기입메인*/
+	min-width: 320px;
+	max-width: 1180px;
+	padding: 10px;
+	border-radius: 7px;;
+	background: #ffffff;
+}
+
+section { /*학점기입내용*/
+	display: none;
+	padding: 20px 0 0;
+	border-top: 1px solid #ddd;
+}
+
+#tab1, #tab2, #tab3, #tab4, #tab5, #tab6, #tab7, #tab8 { /*학점기입표탭*/
+	display: none;
+}
+
+label { /*학점기입표탭*/
+	display: inline-block;
+	padding: 15px 25px;
+	font-weight: 600;
+	color: #bbb;
+	border: 1px solid transparent;
+}
+
+label:hover { /*학점기입표탭커서올릴때*/
+	color: #2e9cdf;
+	cursor: pointer;
+}
+
+input:checked+label { /*학점기입표탭클릭시*/
+	color: #555;
+	border: 1px solid #ddd;
+	border-top: 2px solid #2e9cdf;
+	border-bottom: 1px solid #ffffff;
+}
+
+#tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~
+	#content3, #tab4:checked ~ #content4, #tab5:checked ~ #content5, #tab6:checked 
+	~ #content6, #tab7:checked ~ #content7, #tab8:checked ~ #content8 {
+	/*학점기입표탭*/
+	display: block;
+}
