@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import  csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
-
 from ChatbotApp.models import Users
 from ChatbotApp.serializers import Users_Serializer
-
-
-def chatPage(request):
-    return render(request, 'chatPage/chatPage.html')
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
 
 
 @csrf_exempt
@@ -27,6 +24,55 @@ def user_list(request):
         return JsonResponse(serializer.errors, status=400)
 
 
+@csrf_exempt
+def user(request, pk):
+    obj = Users.objects.get(pk=pk)
+    # 단건?조회?
+
+    if request.method == 'GET':
+        serializer = Users_Serializer(obj)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = Users_Serializer(obj, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+    # elif request.method == 'DELETE':
+    #     obj.delete()
+    #     return HttpResponse(status=204)
+    #
+
+
+def users_Serializer(data):
+    pass
+
+
+@csrf_exempt
+def login(request):
+    if request.method == 'POST':
+        print("request log" + str(request.body))
+        id = request.POST.get('userID', '')
+        pw = request.POST.get('userPW', '')
+        print("id = " + id + " pw = " + pw)
+
+        result = authenticate(username = id, password=pw)
+        if result:
+            print("로그인 성공")
+            return render(request, 'chatPage/chatPage.html')
+        else:
+            print("로그인 실패")
+            return render(request, 'login/login.html')
+    return render(request, 'login/login.html')
+
+
+def chatPage(request):
+    return render(request, 'chatPage/chatPage.html')
+
+
 def register(request):
     return render(request, 'register/register.html')
 
@@ -35,25 +81,3 @@ def grades(request):
     return render(request, 'grades/grades.html')
 
 
-def user(request, pk):
-    data = Users.objects.get(pk=pk)
-    # 단건?
-
-    if request.method == 'GET':
-        serializer = Users_Serializer(data)
-        return JsonResponse(serializer.data, safe=False)
-
-
-    #elif request.method == 'PUT':
-     #   data = JSONParser().parse(request)
-    #    serializer = Std_users_Serializer(data=data)
-   #     if serializer.is_valid():
-  #          serializer.save()
- #           return JsonResponse(serializer.data, status=201)
-#        return JsonResponse(serializer.errors, status=400)
-
-#    elif request.method == 'DELETE':
-
-
-def login(request):
-    return render(request, 'login/login.html')

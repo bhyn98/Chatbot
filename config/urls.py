@@ -1,8 +1,7 @@
-from django.conf.urls import url, include
 from django.urls import path, include
-from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
+import ChatbotApp
 from ChatbotApp import views
+from django.contrib import admin
 
 
 # Wire up our API using automatic URL routing.
@@ -10,9 +9,12 @@ from ChatbotApp import views
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('users/', views.user_list),
-    # path('Users/<int:pk>', views.user),
-    # path('', ChatbotApp.views.login, name='login'),
-    # path('chatPage/', ChatbotApp.views.chatPage, name='chatPage'),
-    # path('register/', ChatbotApp.views.register, name='register'),
-    # path('grades/', ChatbotApp.views.grades, name='grades'),
+    path('users/<int:pk>', views.user),
+    path('', ChatbotApp.views.login, name='login'),
+    path('login/', ChatbotApp.views.login),
+    path('chatPage/', ChatbotApp.views.chatPage, name='chatPage'),
+    path('register/', ChatbotApp.views.register, name='register'),
+    path('grades/', ChatbotApp.views.grades, name='grades'),
+    path('admin/', admin.site.urls),
+
 ]

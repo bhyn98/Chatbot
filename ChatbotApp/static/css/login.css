@@ -62,6 +62,7 @@ input::placeholder{
     color: #fff;
 }
 
+
 .loginbtn{
     top: 330px;
     position: absolute;
@@ -69,6 +70,7 @@ input::placeholder{
     background: #BDD7EE;
     border-radius: 10px;
 }
+
 
 .registerbtn{
     top: 330px;
