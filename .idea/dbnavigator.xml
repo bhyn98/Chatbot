@@ -26,7 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff">
-        <schema name="main" object-types="view, table, column, constraint, index, dataset trigger" />
+        <schema name="main" object-types="table, dataset trigger, index, constraint, column, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -36,7 +36,10 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" object-ref="schemas/main/tables/ChatbotApp_users" />
+      <object connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" object-ref="schemas/main/tables/auth_user" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="e0265427-e0e6-4620-ba09-976db8bbc8ff" />

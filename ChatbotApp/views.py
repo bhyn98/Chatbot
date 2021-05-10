@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
@@ -58,9 +58,8 @@ def login(request):
         id = request.POST.get('userID', '')
         pw = request.POST.get('userPW', '')
         print("id = " + id + " pw = " + pw)
-
-        result = authenticate(username = id, password=pw)
-        if result:
+        login_result = authenticate(username=id, password=pw)
+        if login_result:
             print("로그인 성공")
             return render(request, 'chatPage/chatPage.html')
         else:
@@ -73,7 +72,19 @@ def chatPage(request):
     return render(request, 'chatPage/chatPage.html')
 
 
+@csrf_exempt
 def register(request):
+    if request.method == 'POST':
+        print(request.POST)
+        username = request.POST['userName']
+        userid = request.POST['userID']
+        userpw = request.POST['userPW']
+        userpw2 = request.POST['userPW2']
+        useremail = request.POST['userEmail']
+        if userpw == userpw2:
+            user = User.objects.create_user(userid, userpw, useremail)
+            user.save()
+        return render(request, 'login/login.html')
     return render(request, 'register/register.html')
 
 
