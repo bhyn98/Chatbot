@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <link href="{% static 'css/chatPage.css' %}" rel="stylesheet" type="text/css" />
     <title>KNU CHATBOT</title>
-    <script src="chatPage.js"></script>
+<!--    {% block scripts %}-->
+<!--    <script>-->
+<!--        function chatTrain(){-->
+<!--            alert('Training..');-->
+<!--        }-->
+<!--    </script>-->
+<!--    {% endblock %}-->
 </head>
 
 <body>
@@ -39,7 +45,7 @@
             </div>
         </div>
         <div class="chat_foot">
-            <input type="text" class="chat_text">
+            <input type="text" class="chat_text" style="padding:10px 0; width:100%">
             <a href="#" class="btn_send_msg" onclick="javascript:doQuestion();"></a>
         </div>
     </div>

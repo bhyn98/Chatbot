@@ -82,7 +82,7 @@ def register(request):
         userpw2 = request.POST['userPW2']
         useremail = request.POST['userEmail']
         if userpw == userpw2:
-            user = User.objects.create_user(userid, userpw, useremail)
+            user = User.objects.create_user(userid, useremail, userpw)
             user.save()
         return render(request, 'login/login.html')
     return render(request, 'register/register.html')
