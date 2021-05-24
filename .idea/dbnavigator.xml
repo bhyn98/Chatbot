@@ -25,33 +25,31 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff">
-        <schema name="main" object-types="view, column, constraint, dataset trigger, index, table" />
+      <connection connection-id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559">
+        <schema name="main" object-types="view, table, constraint, dataset trigger, column, index" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="e0265427-e0e6-4620-ba09-976db8bbc8ff">
-      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from auth_user;]]></console>
+    <connection id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559">
+      <console name="Connection 1" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" object-ref="schemas/main/tables/ChatbotApp_users" />
-      <object connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" object-ref="schemas/main/tables/auth_user" />
+      <object connection-id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559" object-ref="schemas/main/tables/ChatbotApp_user" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="e0265427-e0e6-4620-ba09-976db8bbc8ff" />
+    <connection id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" dataset="main.auth_user" active-filter-id="EMPTY_FILTER">
-      <filter id="244eea64-489a-4329-8984-721309f7077a" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+    <filter-actions connection-id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559" dataset="main.ChatbotApp_user_groups" active-filter-id="" />
+    <filter-actions connection-id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559" dataset="main.ChatbotApp_user" active-filter-id="EMPTY_FILTER">
+      <filter id="e3d7d9b7-22ac-43b5-88dd-07a60cb03cf2" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" dataset="main.auth_group" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="e0265427-e0e6-4620-ba09-976db8bbc8ff" dataset="main.ChatbotApp_users" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -81,7 +79,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="e0265427-e0e6-4620-ba09-976db8bbc8ff" active="true">
+      <connection id="ffcb0a04-e181-41bf-b0d3-ed1b743a8559" active="true">
         <database>
           <name value="Connection" />
           <description value="" />

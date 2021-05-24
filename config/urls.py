@@ -8,8 +8,8 @@ from django.contrib import admin
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('users/', views.user_list),
-    path('users/<int:pk>', views.user),
+    # path('users/', views.user_list),
+    # path('users/<int:pk>', views.user),
     path('', ChatbotApp.views.login, name='login'),
     path('login/', ChatbotApp.views.login),
     path('chatPage/', ChatbotApp.views.chatPage, name='chatPage'),

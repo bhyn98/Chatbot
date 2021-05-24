@@ -1,12 +1,9 @@
 from django.db import models
+from django.conf import settings
+from django.contrib.auth.models import AbstractUser
 
 
-class Users(models.Model):
-    userName = models.CharField(max_length=10)
+class User(AbstractUser):
     userID = models.CharField(max_length=13, unique=True)
-    userPW = models.CharField(max_length=20)
-    userEmail = models.EmailField(max_length=30, unique=True)
-    created = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        ordering = ['created']
+    userBigMajor = models.CharField(max_length=20)
+    userSmallMajor = models.CharField(max_length=20)
