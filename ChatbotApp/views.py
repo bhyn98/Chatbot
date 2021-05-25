@@ -11,10 +11,10 @@ User = get_user_model()
 def login(request):
     if request.method == 'POST':
         print("request log" + str(request.body))
-        id_ = request.POST.get('userID', '')
-        pw_ = request.POST.get('userPW', '')
+        id_ = request.POST.get('userID_', '')
+        pw_ = request.POST.get('userPW_', '')
         print("id = " + id_ + " pw = " + pw_)
-        login_result = authenticate(userID=id_, password=pw_)
+        login_result = authenticate(request, userID=id_, password=pw_)
         if login_result:
             print("로그인 성공")
             return render(request, 'chatPage/chatPage.html')
@@ -41,7 +41,7 @@ def register(request):
         usersmallmajor = request.POST['smallMajor']
         if userpw == userpw2:
             user = User.objects.create_user(username, useremail, userpw)
-            user.userName = username
+            #create_user 여기는 건들지 마셈
             user.userID = userid
             user.userBigMajor = userbigmajor
             user.userSmallMajor = usersmallmajor
