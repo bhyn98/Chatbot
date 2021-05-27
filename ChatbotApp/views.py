@@ -1,5 +1,7 @@
+from django.contrib import auth
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+
 from ChatbotApp.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -11,11 +13,11 @@ User = get_user_model()
 def login(request):
     if request.method == 'POST':
         print("request log" + str(request.body))
-        id_ = request.POST.get('userID_', '')
-        pw_ = request.POST.get('userPW_', '')
+        id_ = request.POST['userID_']
+        pw_ = request.POST['userPW_']
         print("id = " + id_ + " pw = " + pw_)
-        login_result = authenticate(request, userID=id_, password=pw_)
-        if login_result:
+        login_result = auth.authenticate(username=id_, password=pw_)
+        if login_result is not None:
             print("로그인 성공")
             return render(request, 'chatPage/chatPage.html')
         else:
@@ -27,22 +29,21 @@ def login(request):
 def chatPage(request):
     return render(request, 'chatPage/chatPage.html')
 
-
 @csrf_exempt
 def register(request):
     if request.method == 'POST':
         print(request.POST)
-        username = request.POST['userName']
-        userid = request.POST['userID']
-        userpw = request.POST['userPW']
-        userpw2 = request.POST['userPW2']
-        useremail = request.POST['userEmail']
-        userbigmajor = request.POST['bigMajor']
-        usersmallmajor = request.POST['smallMajor']
+        username = request.POST.get('userName','')
+        userid = request.POST.get('userID','')
+        userpw = request.POST.get('userPW','')
+        userpw2 = request.POST.get('userPW2','')
+        useremail = request.POST.get('userEmail','')
+        userbigmajor = request.POST.get('bigMajor','')
+        usersmallmajor = request.POST.get('smallMajor','')
         if userpw == userpw2:
-            user = User.objects.create_user(username, useremail, userpw)
+            user = User.objects.create_user(userid, useremail, userpw)
             #create_user 여기는 건들지 마셈
-            user.userID = userid
+            user.userID = username
             user.userBigMajor = userbigmajor
             user.userSmallMajor = usersmallmajor
             user.save()

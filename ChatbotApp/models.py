@@ -4,6 +4,6 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    userID = models.CharField(max_length=13)
+    userID = models.CharField(max_length=20)
     userBigMajor = models.CharField(max_length=20)
     userSmallMajor = models.CharField(max_length=20)

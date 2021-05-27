@@ -26,7 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="20e4ceaf-b7b9-4f8a-ae71-3267984487da">
-        <schema name="main" object-types="dataset trigger, constraint, view, column, index, table" />
+        <schema name="main" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -36,14 +36,13 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="20e4ceaf-b7b9-4f8a-ae71-3267984487da" object-ref="schemas/main/tables/ChatbotApp_user" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="20e4ceaf-b7b9-4f8a-ae71-3267984487da" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="20e4ceaf-b7b9-4f8a-ae71-3267984487da" dataset="main.ChatbotApp_user_groups" active-filter-id="" />
     <filter-actions connection-id="20e4ceaf-b7b9-4f8a-ae71-3267984487da" dataset="main.ChatbotApp_user" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
